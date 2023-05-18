@@ -116,3 +116,19 @@ the tests and you'll see any visual changes reflected in Percy.
 For App Automate session to work with App percy we need to provide appPercy params. For instance, in `"appPercy": {"env": {"PERCY_BRANCH": "test"}, "PERCY_TOKEN": "<PERCY_TOKEN>"}`, the env parameter can contain any of following Percy [enviornment variables](https://docs.percy.io/v2-app/docs/environment-variables).
 
 App Percy supports sharding with App Automate, however, it is recommended to use `all` deviceSelection strategy when using App Percy. Using `any` deviceSelection strategy can produce inconsistent builds as a random device from list of devices provided will be mapped to shards and you build will end up seeing new snapshots.
+
+### Running in local Android Studio
+
+1. Add below code in your test file.
+  ```java
+    @Before
+    public void setUp() {
+        CliWrapper.PERCY_SERVER_ADDRESS = "http://<IP>:5338";
+        appPercy = new AppPercy();
+    }
+  ```
+  get IP using `ifconfig`
+2. export PERCY_TOKEN=<PERCY_TOKEN>
+3. execute `percy app:exec start` to start percy server.
+4. Run Espresso tests
+5. execute `percy app:exec stop` to stop percy server.
