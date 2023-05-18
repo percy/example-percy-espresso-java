@@ -127,7 +127,8 @@ App Percy supports sharding with App Automate, however, it is recommended to use
         appPercy = new AppPercy();
     }
   ```
-  get IP using `ifconfig`
+  - For simulators you can also use `10.0.2.2` as IP
+  - For real devices get IP of your mac/win using `ifconfig` in mac and `ipconfig` in windows.
 2. export PERCY_TOKEN=<PERCY_TOKEN>
 3. execute `percy app:exec start` to start percy server.
 4. Run Espresso tests
