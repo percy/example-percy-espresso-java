@@ -15,6 +15,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import io.percy.espresso.AppPercy;
+import io.percy.espresso.lib.ScreenshotOptions;
+
 /**
  * Espresso tests to ensure that editText box is updated appropriately
  * whenever buttons are clicked
@@ -29,22 +32,28 @@ public class EnsureInputTests {
             new ActivityTestRule<MainActivity>(MainActivity.class);
 
     private MainActivity mainActivity;
+    private AppPercy appPercy;
 
     @Before
     public void setUp() {
         mainActivity = activityRule.getActivity();
+        appPercy = new AppPercy();
     }
 
     @Test
     public void ensureSingleInputIsHandled() {
         onView(withId(R.id.buttonOne)).perform(click());
+        appPercy.screenshot("Single digit");
         onView(withId(R.id.editText)).check(matches(withText("1")));
     }
 
     @Test
     public void ensureMultipleInputIsHandled() {
+        ScreenshotOptions options = new ScreenshotOptions();
+        options.setStatusBarHeight(100);
         onView(withId(R.id.buttonOne)).perform(click());
         onView(withId(R.id.buttonTwo)).perform(click());
+        appPercy.screenshot("Double digit", options);
         onView(withId(R.id.editText)).check(matches(withText("12")));
     }
 }
