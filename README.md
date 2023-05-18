@@ -18,8 +18,6 @@ $ git clone https://github.com/percy/example-percy-espresso-java
 $ cd example-percy-espresso-java
 ```
 
-This tutorial specifically uses Browserstack App Automate to run XCUI test. For running app percy locally you will need to add a new entry in `etc/hosts` file -> `percy.cli 127.0.0.1`.
-
 ### Step 2
 # Build ipa & testSuite
 
