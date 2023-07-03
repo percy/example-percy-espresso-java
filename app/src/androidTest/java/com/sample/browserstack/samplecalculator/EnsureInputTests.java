@@ -28,8 +28,7 @@ import io.percy.espresso.lib.ScreenshotOptions;
 public class EnsureInputTests {
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule =
-            new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
     private MainActivity mainActivity;
     private AppPercy appPercy;

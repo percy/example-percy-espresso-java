@@ -19,11 +19,11 @@ $ cd example-percy-espresso-java
 ```
 
 ### Step 2
-# Build ipa & testSuite
+# Build apk & testSuite
 
 We have provided you with a sample application and testSuite in the resources folder that you can use to get started without following the rest of step 2. If you want to use these, simply skip to step 3.
 
-Alternatively, you can need to build your ipa & testSuite from the sample project.
+Alternatively, you can need to build your apk & testSuite from the sample project.
 
 1. Build the main application: `./gradlew assemble` (apk will be generated in the app/build/outputs/apk/debug/ directory)
 2. Build the test application: `./gradlew assembleAndroidTest` (apk will be generated in the app/build/outputs/apk/androidTest/debug/ directory)
