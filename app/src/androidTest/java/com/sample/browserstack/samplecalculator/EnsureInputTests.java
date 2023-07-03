@@ -42,7 +42,7 @@ public class EnsureInputTests {
 
     @Test
     public void ensureSingleInputIsHandled() {
-        onView(withId(R.id.buttonOne)).perform(click());
+        onView(withId(R.id.buttonTwo)).perform(click());
         appPercy.screenshot("Single digit");
         onView(withId(R.id.editText)).check(matches(withText("1")));
     }
