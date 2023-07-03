@@ -28,8 +28,7 @@ import io.percy.espresso.lib.ScreenshotOptions;
 public class EnsureInputTests {
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule =
-            new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
     private MainActivity mainActivity;
     private AppPercy appPercy;
@@ -42,7 +41,7 @@ public class EnsureInputTests {
 
     @Test
     public void ensureSingleInputIsHandled() {
-        onView(withId(R.id.buttonTwo)).perform(click());
+        onView(withId(R.id.buttonOne)).perform(click());
         appPercy.screenshot("Single digit");
         onView(withId(R.id.editText)).check(matches(withText("1")));
     }
