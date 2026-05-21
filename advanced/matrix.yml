@@ -1,0 +1,87 @@
+# PER-8195 Phase 2 — Espresso-Java matrix-row mapping.
+# Test code: ../app/src/androidTest/java/com/sample/browserstack/samplecalculator/AdvancedScreenshotTests.java
+#
+# Espresso tests must live under app/src/androidTest/ per Android instrumentation
+# source-set convention; this advanced/ directory holds the matrix + README only.
+
+sdk: espresso-java
+package: io.percy:espresso-java
+language: java
+sdk_min_version: '1.0.3'
+cli_min_version: '1.31.13'
+
+rows:
+  - id: status_bar_height
+    state: covered
+    test: 'AdvancedScreenshotTests > exercisesStatusBarHeight'
+  - id: nav_bar_height
+    state: covered
+    test: 'AdvancedScreenshotTests > exercisesNavBarHeight'
+  - id: fullscreen
+    state: covered
+    test: 'AdvancedScreenshotTests > exercisesFullscreen'
+
+  - id: build_metadata_via_env
+    state: covered
+    test: 'AdvancedScreenshotTests > exercisesScreenshotWithBuildMetadataFromEnv (reads PERCY_PROJECT / PERCY_BUILD via SDK)'
+  - id: env_percy_branch
+    state: covered
+  - id: env_percy_commit
+    state: covered
+
+  # Espresso SDK exposes a narrower ScreenshotOptions surface than the
+  # Appium SDK family. The following rows are not exposed in 1.0.3.
+  - id: device_name_override
+    state: n_a
+    reason: 'Espresso runs on a single connected device/emulator at a time; device_name is implicit.'
+  - id: orientation_handling
+    state: planned
+    test: 'Future: exercise device.setOrientation via UiDevice'
+  - id: ignore_regions_xpaths
+    state: n_a
+    reason: 'Not exposed in io.percy:espresso-java ScreenshotOptions as of 1.0.3.'
+  - id: ignore_region_appium_elements
+    state: n_a
+    reason: 'Appium-driver-only; Espresso has no Appium driver.'
+  - id: custom_ignore_regions
+    state: planned
+    test: 'Future: ScreenshotOptions.setIgnoreRegions(...) if SDK exposes it'
+  - id: consider_regions_xpaths
+    state: n_a
+    reason: 'Not exposed in io.percy:espresso-java as of 1.0.3.'
+  - id: sync
+    state: planned
+  - id: test_case
+    state: planned
+  - id: labels
+    state: planned
+
+  # Web-only.
+  - id: widths
+    state: n_a
+  - id: percy_css
+    state: n_a
+  - id: min_height
+    state: n_a
+  - id: enable_javascript
+    state: n_a
+  - id: scope
+    state: n_a
+  - id: discovery
+    state: n_a
+  - id: dom_transformation
+    state: n_a
+  - id: responsive_snapshot_capture
+    state: n_a
+  - id: readiness_preset
+    state: n_a
+  - id: device_pixel_ratio
+    state: n_a
+  - id: browsers
+    state: n_a
+
+  - id: percy_yml_global_config
+    state: covered
+  - id: environment_info_reporting
+    state: covered
+    test: 'automatic via io.percy:espresso-java client info'
