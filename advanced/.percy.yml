@@ -1,0 +1,6 @@
+# PER-8195 — global config for io.percy:espresso-java advanced example.
+
+version: 2
+
+percy:
+  defer_uploads: false

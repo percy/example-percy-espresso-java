@@ -1,6 +1,15 @@
 # example-percy-espresso-java
 Example app used by the [Percy Espresso Java tutorial](https://docs.percy.io/v2-app/docs/espresso) demonstrating Percy's Espresso integration.
 
+> **New:** This repo ships an [`advanced/`](./advanced) matrix + the corresponding `AdvancedScreenshotTests.java` in `app/src/androidTest/`. Espresso tests must live under `app/src/androidTest/` per Android instrumentation source-set convention; the `advanced/` dir holds only the matrix.yml and README. See the [Percy SDK Feature Matrix](https://docs.percy.io/docs/sdk-feature-matrix) for cross-SDK coverage.
+
+## Examples
+
+| Example | What it shows | Run command |
+|---|---|---|
+| `app/src/androidTest/.../EnsureInputTests.java` (basic) | Minimum viable: `appPercy.screenshot(name)` per Espresso test. Start here. | `./gradlew connectedDebugAndroidTest` |
+| `app/src/androidTest/.../AdvancedScreenshotTests.java` (advanced) | Full applicable App Percy Espresso SDK feature surface: `ScreenshotOptions.setStatusBarHeight` / `setNavigationBarHeight` / `setFullscreen`, build metadata via env. See [`advanced/README.md`](./advanced/README.md) for the matrix-row coverage table. | `npx @percy/cli app:exec -- ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.sample.browserstack.samplecalculator.AdvancedScreenshotTests` |
+
 ## Percy Espresso Java Tutorial
 
 The tutorial assumes you're already familiar with Espresso and Java and focuses on using it with App Percy. You'll still
