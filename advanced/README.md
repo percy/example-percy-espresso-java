@@ -15,8 +15,8 @@ Espresso tests must live under `app/src/androidTest/` per the Android instrument
 5 `@Test` methods in `AdvancedScreenshotTests.java`, one per applicable matrix row:
 
 - `status_bar_height` (via `ScreenshotOptions.setStatusBarHeight`)
-- `nav_bar_height` (via `ScreenshotOptions.setNavigationBarHeight`)
-- `fullscreen` (via `ScreenshotOptions.setFullscreen`)
+- `nav_bar_height` (via `ScreenshotOptions.setNavBarHeight`)
+- `fullscreen` (via `ScreenshotOptions.setFullScreen`)
 - Build metadata via env (`PERCY_PROJECT` / `PERCY_BUILD` / `PERCY_BRANCH` / `PERCY_COMMIT` — read by the SDK at upload time)
 - Baseline screenshot without options
 

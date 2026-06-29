@@ -8,7 +8,7 @@ Example app used by the [Percy Espresso Java tutorial](https://docs.percy.io/v2-
 | Example | What it shows | Run command |
 |---|---|---|
 | `app/src/androidTest/.../EnsureInputTests.java` (basic) | Minimum viable: `appPercy.screenshot(name)` per Espresso test. Start here. | `./gradlew connectedDebugAndroidTest` |
-| `app/src/androidTest/.../AdvancedScreenshotTests.java` (advanced) | Full applicable App Percy Espresso SDK feature surface: `ScreenshotOptions.setStatusBarHeight` / `setNavigationBarHeight` / `setFullscreen`, build metadata via env. See [`advanced/README.md`](./advanced/README.md) for the matrix-row coverage table. | `npx @percy/cli app:exec -- ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.sample.browserstack.samplecalculator.AdvancedScreenshotTests` |
+| `app/src/androidTest/.../AdvancedScreenshotTests.java` (advanced) | Full applicable App Percy Espresso SDK feature surface: `ScreenshotOptions.setStatusBarHeight` / `setNavBarHeight` / `setFullScreen`, build metadata via env. See [`advanced/README.md`](./advanced/README.md) for the matrix-row coverage table. | `npx @percy/cli app:exec -- ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.sample.browserstack.samplecalculator.AdvancedScreenshotTests` |
 
 ## Percy Espresso Java Tutorial
 
