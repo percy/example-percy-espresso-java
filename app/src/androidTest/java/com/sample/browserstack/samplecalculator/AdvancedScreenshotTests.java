@@ -52,7 +52,7 @@ public class AdvancedScreenshotTests {
     @Test
     public void exercisesNavBarHeight() {
         ScreenshotOptions opts = new ScreenshotOptions();
-        opts.setNavigationBarHeight(48);
+        opts.setNavBarHeight(48);
         onView(withId(R.id.buttonOne)).perform(click());
         onView(withId(R.id.buttonTwo)).perform(click());
         appPercy.screenshot("Calculator — nav bar height", opts);
@@ -61,7 +61,7 @@ public class AdvancedScreenshotTests {
     @Test
     public void exercisesFullscreen() {
         ScreenshotOptions opts = new ScreenshotOptions();
-        opts.setFullscreen(true);
+        opts.setFullScreen(true);
         onView(withId(R.id.buttonOne)).perform(click());
         appPercy.screenshot("Calculator — fullscreen", opts);
     }
